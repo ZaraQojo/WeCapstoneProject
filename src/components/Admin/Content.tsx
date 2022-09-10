@@ -3,7 +3,14 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../context/StateProvider";
 import { ToggleAdminMode } from "../../utils/functions";
 
-const Content = ({ pageTitle, Element }: { pageTitle: string, Element:JSX.Element }) => {
+const Content = ({
+  pageTitle,
+  Element,
+}: {
+  pageTitle: string;
+  Element: JSX.Element;
+}) => {
+  // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
   return (
     <div className="flex flex-col w-[80%] h-screen px-2">
@@ -18,8 +25,9 @@ const Content = ({ pageTitle, Element }: { pageTitle: string, Element:JSX.Elemen
           </button>
         </Link>
       </div>
-      <div className="flex-1 my-2 mx-6 border-8 border-gray-200 rounded-xl border-dotted overflow-y-scroll scrollbar-hidden">{Element}</div>
-      
+      <div className="flex-1 my-2 mx-6 border-8 border-gray-200 rounded-xl border-dotted overflow-y-scroll scrollbar-hidden">
+        {Element}
+      </div>
     </div>
   );
 };

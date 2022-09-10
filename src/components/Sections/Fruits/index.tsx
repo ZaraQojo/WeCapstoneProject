@@ -1,12 +1,9 @@
 import { PrevNext as PrevNextButtons, Title } from "..";
 
-import Container from "../../Container";
-import { FilterFood } from "../../../utils/filters";
 import { useState } from "react";
 import App from "../Fruits/App";
 const Fruits = () => {
-  const fruits = FilterFood("fruits");
-  const [scrollValue, setScrollValue] = useState(0);
+  const [, setScrollValue] = useState(0);
 
   return (
     <section className="w-full my-5">

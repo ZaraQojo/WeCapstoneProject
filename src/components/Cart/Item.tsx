@@ -3,12 +3,16 @@ import { BiMinus, BiPlus } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { motion } from "framer-motion";
 import { cartItem } from "../../../types";
-import { deleteCartItem, getFoodyById, updateCartItemQty } from "../../utils/functions";
+import {
+  deleteCartItem,
+  getFoodyById,
+  updateCartItemQty,
+} from "../../utils/functions";
 import { useStateValue } from "../../context/StateProvider";
 
 const CartItem = ({ item }: { item: cartItem }) => {
   const [{ foodItems, cartItems }, dispatch] = useStateValue();
-  const { id, fid, qty } = item;
+  const { fid, qty } = item;
   const foodItem = getFoodyById(foodItems, fid);
 
   return (
@@ -32,7 +36,12 @@ const CartItem = ({ item }: { item: cartItem }) => {
         <motion.div
           className=""
           whileTap={{ scale: 0.75 }}
-          onClick={qty > 1 ? () => updateCartItemQty(cartItems, foodItems, item, dispatch, -1) : () => {}}
+          onClick={
+            qty > 1
+              ? () =>
+                  updateCartItemQty(cartItems, foodItems, item, dispatch, -1)
+              : () => {}
+          }
         >
           <BiMinus className="text-gray-50" />
         </motion.div>
@@ -42,7 +51,9 @@ const CartItem = ({ item }: { item: cartItem }) => {
         <motion.div
           className=""
           whileTap={{ scale: 0.75 }}
-          onClick={() => updateCartItemQty(cartItems, foodItems, item, dispatch, 1)}
+          onClick={() =>
+            updateCartItemQty(cartItems, foodItems, item, dispatch, 1)
+          }
         >
           <BiPlus className="text-gray-50" />
         </motion.div>

@@ -24,7 +24,7 @@ function App() {
     fetchFoodData(dispatch);
     dispatchUsers(dispatch);
     user && fetchUserCartData(user, dispatch);
-  }, []);
+  }, [dispatch, user]);
 
   useEffect(() => {
     foodItems &&

@@ -1,15 +1,15 @@
-import Container from "../../Container";
-import { FilterFood } from "../../../utils/filters";
-import { useEffect, useState } from "react";
+import react from "react";
 import { useStateValue } from "../../../context/StateProvider";
 import Filters from "../../Filters";
 import { Title } from "..";
 import App from "../Fruits/App";
 
 const Menu = () => {
-  const [scrollValue, setScrollValue] = useState(0);
-  const [{ foodItems }, dispatch] = useStateValue();
-  const [filter, setFilter] = useState<string>("all");
+  // eslint-disable-next-line no-empty-pattern
+  const [] = react.useState(0);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useStateValue();
+  const [filter, setFilter] = react.useState<string>("all");
 
   return (
     <section className="w-full my-5 " id="menu">

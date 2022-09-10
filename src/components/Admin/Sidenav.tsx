@@ -28,13 +28,13 @@ const Sidenav = ({
 };
 
 const SidenavHeader = () => {
-  const [{ adminMode }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   return (
     <motion.div
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      whileHover = {{scale:1.1}}
+      whileHover={{ scale: 1.1 }}
       className=""
     >
       <Link
@@ -56,7 +56,7 @@ const SidenavFooter = () => {
   const navigate = useNavigate();
   return (
     <motion.div
-      whileHover = {{scale:1.1}}
+      whileHover={{ scale: 1.1 }}
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}

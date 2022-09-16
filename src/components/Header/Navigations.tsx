@@ -42,13 +42,13 @@ const Navigations = ({ direction }: { direction?: string }) => {
           whileHover={{ scale: 1.1 }}
           className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
         >
-          About Us
+          Statics
         </motion.li>
         <motion.li
           whileHover={{ scale: 1.1 }}
           className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
         >
-          Contact Us
+          Account
         </motion.li>
       </motion.ul>
 

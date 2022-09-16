@@ -1,31 +1,29 @@
-import react from "react";
-import { useStateValue } from "../../../context/StateProvider";
-import Filters from "../../Filters";
-import { Title } from "..";
-import App from "../Fruits/App";
+import { PrevNext as PrevNextButtons, Title } from "..";
 
-const Menu = () => {
-  // eslint-disable-next-line no-empty-pattern
-  const [] = react.useState(0);
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useStateValue();
-  const [filter, setFilter] = react.useState<string>("all");
+import Container from "../../Container";
+import { FilterFood } from "../../../utils/filters";
+import { useState } from "react";
+
+const Fruits = () => {
+  const fruits = FilterFood("fruits");
+  const [scrollValue, setScrollValue] = useState(0);
 
   return (
-    <section className="w-full my-5 " id="menu">
-      <div className="w-full flex items-center justify-center">
-        <Title title="Our Hot Dishes" center />
+    <section className="w-full my-5">
+      <div className="w-full flex items-center justify-between">
+        <Title title="Our fresh & healthy fruits" />
+        <PrevNextButtons
+          onNext={() => setScrollValue(10000)}
+          onPrev={() => setScrollValue(-10000)}
+        />
       </div>
-      <Filters filter={filter} setFilter={setFilter} />
-      <App />
-      {/* <Container
+      <Container
         className="bg-containerbg"
-        col
         scrollOffset={scrollValue}
-        items={filter === "all" ? foodItems : FilterFood(filter)}
-      /> */}
+        items={fruits}
+      />
     </section>
   );
 };
 
-export default Menu;
+export default Fruits;
